@@ -1,0 +1,42 @@
+{
+    "101A": {
+        "name": "Ram",
+        "shapeFileName": "Badrachalam"
+    },
+    "102A": {
+        "name": "Anirudh",
+        "shapeFileName": "DhubriAssam"
+    },
+    "103A": {
+        "name": "Simran Kaur",
+        "shapeFileName": "Haridwar"
+    },
+    "104A": {
+        "name": "Criston",
+        "shapeFileName": "OddishaSubarnarekha"
+    },
+    "105A": {
+        "name": "NOLAN",
+        "ShapeSileName": "Rajasthan"
+    },
+    "106A": {
+        "name": "Karan",
+        "shapeFileName": "Ratnagiri"
+    },
+    "107A": {
+        "name": "KAMAL",
+        "shapeFileName": "Wayanad"
+    },
+    "108A": {
+        "name": "Karthik",
+        "shapeFileName": "Kottayam"
+    },
+    "109A": {
+        "name": "ShanmukhRanaPrathap",
+        "shapeFileName": "Chittor"
+    },
+    "110A": {
+        "name": "Harini",
+        "shapeFileName": "Tirupathi"
+    }
+}
