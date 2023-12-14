@@ -321,33 +321,39 @@ async function droughtThis(FarmerId, Tyear, Tmonth) {
             console.log('Drought Affected Cropland Area (Ha)', droughtCroplandAreaHa);
 
             // Resolve with the result
-            resolve({ landarea, FarmerName });
+            resolve({ "d_landarea" : landarea,
+            "d_FarmerName" : FarmerName,
+            "droughtAffectedArea": droughtAreaHectares,
+            "droughtAffectedCropArea" : droughtCroplandAreaHa});
         } catch (error) {
             reject(error);
         }
     });
 }
+
 // Authenticate using a service account.
-ee.data.authenticateViaPrivateKey(privateKey, () => {
-    // Call the function when authentication is successful.
-    try {
+// ee.data.authenticateViaPrivateKey(privateKey, () => {
+//     // Call the function when authentication is successful.
+//     try {
     
-        ee.initialize(null, null, async function () {
-          try {
-            const res = await  droughtThis('110A', 2022, 10);
-          } catch (e) {
-            console.error('Analysis error: ' + e);
+//         ee.initialize(null, null, async function () {
+//           try {
+//             const res = await  droughtThis("110A", 2022, 10);
+//           } catch (e) {
+//             console.error('Analysis error: ' + e);
         
-          }
-          // ... run analysis ...
-        }, function (e) {
-          console.error('Initialization error: ' + e);
-        });
-      } catch (e) {
-        console.error('Authentication error: ' + e);
-      }
+//           }
+//           // ... run analysis ...
+//         }, function (e) {
+//           console.error('Initialization error: ' + e);
+//         });
+//       } catch (e) {
+//         console.error('Authentication error: ' + e);
+//       }
     
    
-}, (e) => {
-    console.error('Authentication error: ' + e);
-});
+// }, (e) => {
+//     console.error('Authentication error: ' + e);
+// });
+
+module.exports = droughtThis;

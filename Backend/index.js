@@ -17,6 +17,19 @@ app.post('/fetch', async (req, res) => {
   res.json(ans);
 });
 
+//Making route for drought purpose below
+app.post('/for_drought',async(req,res)=>{
+  var getDrought =require('./d_authenticate');
+  const d_FarmerId = req.body.d_FarmerId;
+  const d_TMonth = req.body.d_TMonth;
+  const d_TYear = req.body.d_TYear;
+
+  var d_ans = await getDrought(d_FarmerId,d_TYear,d_TMonth);
+  console.log("At index.js drought function executed");
+  console.log("printing d_ans: ",d_ans);
+  res.json(d_ans);
+})
+
 app.listen(8080, function () {
   console.log('Server started on port 8080');
 });
