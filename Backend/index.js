@@ -17,7 +17,7 @@ app.post('/fetch', async (req, res) => {
   res.json(ans);
 });
 
-//Making route for drought purpose below
+// //Making route for drought purpose below
 app.post('/for_drought',async(req,res)=>{
   var getDrought =require('./d_authenticate');
   const d_FarmerId = req.body.d_FarmerId;

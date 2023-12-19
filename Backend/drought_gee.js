@@ -160,7 +160,7 @@
 // //     .then(result => console.log(result))
 // //     .catch(error => console.error(error));
 
-//new one below if not work switch above
+//new one below if not working switch to above
 
 var ee = require('@google/earthengine');
 const dataPath = 'data.json';
@@ -216,9 +216,11 @@ async function droughtThis(FarmerId, Tyear, Tmonth) {
             });
 
             // Year & Month for which we require VCI
-            var year = 2022;
-            var month = 10;
-            
+            // var year = 2022;
+            var year=Tyear;
+            // var month = 10;
+            var month = Tmonth;
+
             // Max and Min NDVI for all years but for selected month
             var ndvi =  await modisScaled.filter(ee.Filter.calendarRange(month, month, 'month'));
             // console.log(ndvi, "For specific month");
@@ -338,7 +340,7 @@ async function droughtThis(FarmerId, Tyear, Tmonth) {
     
 //         ee.initialize(null, null, async function () {
 //           try {
-//             const res = await  droughtThis("110A", 2022, 10);
+//             const res = await  droughtThis("104A", 2022, 10);
 //           } catch (e) {
 //             console.error('Analysis error: ' + e);
         
